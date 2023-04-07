@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export function Navbar() {
   return (
     <nav
-      className='w-screen bg-zinc-950 border-b border-zinc-800/40 p-4'
+      className='w-screen backdrop-blur border-b border-zinc-800/50 p-4 fixed z-[9]'
     >
       <div
         className='w-full h-14 flex items-center justify-between'
@@ -18,22 +18,17 @@ export function Navbar() {
             Houky
           </h1>
           <span
-            className='text-zinc-600/40 text-xl'
+            className='text-zinc-500/40 text-xl'
           >
             Interactions
           </span>
         </div>
 
         <button
-          className='px-4 py-2 rounded'
+          className='px-4 py-2 rounded-md bg-zinc-9500/10 backdrop-blur'
         >
-          <FontAwesomeIcon size='lg' icon={faBars} />
+          Login
         </button>
-      </div>
-      <div
-        className=''
-      >
-        <ul></ul>
       </div>
     </nav>
   )
