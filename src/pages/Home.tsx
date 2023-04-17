@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { faBox, faCode, faDiagramSuccessor } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FeatureCard } from '../components/Card'
+import { useNavigate } from 'react-router-dom'
 
 const inViewAnimation = {
   initial: {
@@ -17,18 +18,20 @@ const inViewAnimation = {
   transition: {
     type: 'spring',
     duration: 1
+  },
+  viewport: {
+    once: true
   }
-
 }
 
 export function Home() {
+  const navigate = useNavigate()
+
   return (
-    <div
-      className='bg-gradient-to-br from-5% from-slate-950 to-black w-full h-full overflow-y-scroll overflow-x-hidden'
-    >
+    <div className='cont'>
       <Navbar />
 
-      <section
+      <div
         className='w-full h-full px-4 py-24'
       >
         <div
@@ -65,14 +68,15 @@ export function Home() {
               whileTap={{
                 scale: 0.9
               }}
+              onClick={() => navigate('/dashboard')}
               className='px-6 py-2.5 rounded-md bg-gradient-to-br from-indigo-700 to-purple-600 select-none'
             >
               Get Started
             </motion.button>
           </motion.div>
         </div>
-      </section>
-      <section
+      </div>
+      <div
         className='w-full mt-80 select-none'
       >
         <div className='w-full h-24 text-center'>
@@ -98,12 +102,12 @@ export function Home() {
         />
         <FeatureCard
           {...inViewAnimation}
-          title='Bot Maker'
+          title='Nodes'
           icon={<FontAwesomeIcon icon={faDiagramSuccessor} />}
-          description='We have a powerfully bot maker with zero code gui.'
+          description='We have a powerfully bot maker zero code, with nodes or gui.'
         />
         </div>
-      </section>
+      </div>
     </div>
   )
 }

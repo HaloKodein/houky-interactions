@@ -15,10 +15,34 @@ body {
   font-family: 'Poppins', sans-serif;
   color: #FEFEFE;
   background-color: #09090b;
+  width: 100vw;
+  height: 100vh;
 }
 
 .btn {
   @apply bg-rose-600 text-3xl font-bold;
+}
+
+.cont {
+  @apply bg-gradient-to-br from-5% from-slate-950 to-black w-screen h-full overflow-y-scroll flex flex-col items-center;
+}
+
+.box {
+  @apply rounded-xl p-4 bg-zinc-600/20 shadow-xl border-[1.2px] border-white/10;
+}
+
+.line {
+  @apply flex flex-col items-center justify-center gap-2;
+}
+
+hr {
+  width: 100%;
+  border: solid 1px rgba(200, 200, 200, .1);
+}
+
+hr .vertical {
+  height: 100%;
+  border-right: solid 1px rgba(200, 200, 200, .1);
 }
 
 .cursive-txt {
